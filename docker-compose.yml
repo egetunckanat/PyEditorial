@@ -1,12 +1,65 @@
 version: "3.6"
 
 services:
- web:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+      PGDATA: /data/postgres
+    volumes:
+      # - postgres-data:/data/postgres
+      - ./data/:/docker-entrypoint-initdb.d/
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - postgres
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./ssl:/etc/ssl
+    depends_on:
+      - web
+  web:
     build:
      context: .
      dockerfile: Dockerfile
-    command: ./manage.py runserver 0.0.0.0:8000
+    command: >
+      bash -c "python manage.py makemigrations
+      && python manage.py migrate
+      && python manage.py migrate --run-syncdb
+      && python manage.py collectstatic --noinput
+      && python manage.py runserver 0.0.0.0:8080"
     volumes:
       - ./:/code
+      - ./PyEditorial:/app/PyEditorial
     ports:
-      - "80:8000"
+      - "8080:8080"
+    networks:
+      - postgres
+    depends_on:
+      - postgres
+    restart: always
+    environment:
+      PSQL_NAME: ${DB_NAME}
+      PSQL_USER: ${DB_USER}
+      PSQL_PASS: ${DB_PASS}
+      PSQL_HOST: ${DB_HOST}
+      PSQL_PORT: ${DB_PORT}
+networks:
+  postgres:
+    driver: bridge
+volumes:
+  postgres-data:
+
