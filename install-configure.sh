@@ -1,6 +1,6 @@
 #!/bin/bash
  
-docker ps;
+docker ps > /dev/null;
 dockerChecker=$(echo $?)
 
 if (($dockerChecker == 0));then
@@ -10,18 +10,22 @@ else
    exit
     
 fi
+docker-compose version > /dev/null;
+composeChecker=$(echo $?)
 
-if ![ -x "$(command -v docker)" ]; then
+if (($composeChecker == 0)); then
+   echo "docker-compose already exists"
+else
    echo "Pelase check docker-compose is installed and running"
    exit
-else
-   echo "docker-compose is installed"
 fi
 
-mv env_sample .env; 
+cp env_sample .env > /dev/null;
 
-docker-compose down; exit 0;
+docker-compose down;
 
 docker-compose build;
 
 docker-compose up -d;
+
+echo "Installation and configuration finished."
