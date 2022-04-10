@@ -1,9 +1,9 @@
 #!/bin/bash
  
 docker ps;
-dockerChecker= echo $?
+dockerChecker=$(echo $?)
 
-if $dockerChecker==0;then
+if (($dockerChecker == 0));then
     echo "Docker exists and running"
 else
    echo "Pelase check Docker is installed and running"
@@ -11,8 +11,9 @@ else
     
 fi
 
-if ![ -x "$(command -v docker-compose)" ]; then
-   apt install docker-compose -y
+if ![ -x "$(command -v docker)" ]; then
+   echo "Pelase check docker-compose is installed and running"
+   exit
 else
    echo "docker-compose is installed"
 fi
