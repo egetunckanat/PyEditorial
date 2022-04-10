@@ -1,13 +1,16 @@
 OVERVIEW
+
 --> In this project, in addition to the mavenium/PyEditorial Blog CMS structure, PostgreSQL for database and Nginx for proxy-pass are integrated.
 --> Forked from https://github.com/mavenium/PyEditorial.git
 --> Edited for development environment.
 
 DEPENDINCIES
+
 --> Docker
 --> docker-compose
 
 FEATURES
+
 --> PyEditorial, PostgreSQL and Nginx run seperate containers.
 --> PostgreSQL needs eviroment variables which username, password etc., project includes these enviroment variable samples in env_samples file 
 --> The table and data required for the initial installation are in the dummydata.sql file. 
@@ -19,6 +22,7 @@ FEATURES
 --> It updates existing dev-enviroments.
 
 INSTALLATION
+
 --> For installation, run the command in below; 
 
 ./install-configure.sh
@@ -36,6 +40,7 @@ chmod +x install-configure.sh
 !!! IMPORTANT NOTE; If the installation script is run again after installation, newly added data and tables will be deleted. Persistent data is not kept !!!
 
 HOW TO WORK?
+
 --> PyEditorial, PostgreSQL and Nginx run seperate containers. Because of that, network setting as bridge is given in docker compose file.
 --> PostgreSQL gets the required data and tables from the dumydata.sql file to get started.
 --> After the installation is completed, go to http://localhost or https://localhost to use project
