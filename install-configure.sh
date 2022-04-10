@@ -6,7 +6,7 @@ dockerChecker=$(echo $?)
 if (($dockerChecker == 0));then
     echo "Docker exists and running"
 else
-   echo "Pelase check Docker is installed and running"
+   echo "Please check Docker is installed and running"
    exit
     
 fi
@@ -16,7 +16,7 @@ composeChecker=$(echo $?)
 if (($composeChecker == 0)); then
    echo "docker-compose already exists"
 else
-   echo "Pelase check docker-compose is installed and running"
+   echo "Please check docker-compose is installed and running"
    exit
 fi
 
