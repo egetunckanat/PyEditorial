@@ -32,7 +32,9 @@
 
 **-->** For installation, run the command in below; 
 
-'''_./install-configure.sh_'''
+'''
+_./install-configure.sh_
+'''
 
 **-->** If the script is not working please run the command in below and try the first command again;
 
