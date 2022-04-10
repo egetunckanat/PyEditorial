@@ -1,4 +1,4 @@
-<h1>**OVERVIEW**</h1>
+<h2>OVERVIEW</h2>
 
 **-->** In this project, in addition to the mavenium/PyEditorial Blog CMS structure, PostgreSQL for database and Nginx for proxy-pass are integrated.
 
@@ -6,13 +6,13 @@
 
 **-->** Edited for development environment.
 
-<h1>**DEPENDINCIES**</h1>
+<h2>DEPENDINCIES</h2>
 
 **-->** Docker
 
 **-->** docker-compose
 
-<h1>**FEATURES**</h1>
+<h2>FEATURES</h2>
 
 **-->** PyEditorial, PostgreSQL and Nginx run seperate containers.
 
@@ -28,7 +28,7 @@
 
 **-->** It updates existing dev-enviroments.
 
-<h1>**INSTALLATION**</h1>
+<h2>INSTALLATION</h2>
 
 **-->** For installation, run the command in below; 
 
@@ -50,7 +50,7 @@ _chmod +x install-configure.sh_
 
 **!!! IMPORTANT NOTE; If the installation script is run again after installation, newly added data and tables will be deleted. Persistent data is not kept !!!**
 
-<h1>**HOW TO WORK?**</h1>
+<h2>HOW TO WORK?</h2>
 
 **-->** PyEditorial, PostgreSQL and Nginx run seperate containers. Because of that, network setting as bridge is given in docker compose file.
 
