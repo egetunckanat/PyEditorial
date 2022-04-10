@@ -60,4 +60,4 @@
 
 <h3> Dorking Diagram </h3>
 
-![]()
+![](https://github.com/egetunckanat/PyEditorial/blob/master/diagram.png)
