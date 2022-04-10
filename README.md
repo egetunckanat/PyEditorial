@@ -57,3 +57,7 @@
 **-->** PostgreSQL gets the required data and tables from the dumydata.sql file to get started.
 
 **-->** After the installation is completed, go to http://localhost or https://localhost to use project
+
+<h3> Dorking Diagram </h3>
+
+![]()
