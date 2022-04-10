@@ -1,59 +1,59 @@
-OVERVIEW
+<h1>**OVERVIEW**</h1>
 
---> In this project, in addition to the mavenium/PyEditorial Blog CMS structure, PostgreSQL for database and Nginx for proxy-pass are integrated.
+**-->** In this project, in addition to the mavenium/PyEditorial Blog CMS structure, PostgreSQL for database and Nginx for proxy-pass are integrated.
 
---> Forked from https://github.com/mavenium/PyEditorial.git
+**-->** Forked from https://github.com/mavenium/PyEditorial.git
 
---> Edited for development environment.
+**-->** Edited for development environment.
 
-DEPENDINCIES
+<h1>**DEPENDINCIES**</h1>
 
---> Docker
+**-->** Docker
 
---> docker-compose
+**-->** docker-compose
 
-FEATURES
+<h1>**FEATURES**</h1>
 
---> PyEditorial, PostgreSQL and Nginx run seperate containers.
+**-->** PyEditorial, PostgreSQL and Nginx run seperate containers.
 
---> PostgreSQL needs eviroment variables which username, password etc., project includes these enviroment variable samples in env_samples file 
+**-->** PostgreSQL needs eviroment variables which username, password etc., project includes these enviroment variable samples in env_samples file 
 
---> The table and data required for the initial installation are in the dummydata.sql file. 
+**-->** The table and data required for the initial installation are in the dummydata.sql file. 
 
-!!! IMPORTANT NOTE; If the installation script is run again after installation, newly added data and tables will be deleted. Persistent data is not kept !!!
+**!!! IMPORTANT NOTE; If the installation script is run again after installation, newly added data and tables will be deleted. Persistent data is not kept !!!**
 
---> There is a sef-signed certificate and key for nginx in the ssl folder, it is recommended to change it after installation.
+**-->** There is a sef-signed certificate and key for nginx in the ssl folder, it is recommended to change it after installation.
 
---> One click to install development enviroment on docker containers.
+**-->** One click to install development enviroment on docker containers.
 
---> It updates existing dev-enviroments.
+**-->** It updates existing dev-enviroments.
 
-INSTALLATION
+<h1>**INSTALLATION**</h1>
 
---> For installation, run the command in below; 
+**-->** For installation, run the command in below; 
 
-./install-configure.sh
+_./install-configure.sh_
 
---> If the script is not working please run the command in below and try the first command again;
+**-->** If the script is not working please run the command in below and try the first command again;
 
-chmod +x install-configure.sh
+_chmod +x install-configure.sh_
 
---> install-configur.sh script performs operations in the following order;
+**-->** install-configur.sh script performs operations in the following order;
 
-----> Checks docker's existance. If it is exist, script will continue, If it is not exist, script will broke and warn. 
+**---->** Checks docker's existance. If it is exist, script will continue, If it is not exist, script will broke and warn. 
 
-----> Checks docker-compose's existance. If it is exist, script will continue, If it is not exist, script will broke and warn.
+**---->** Checks docker-compose's existance. If it is exist, script will continue, If it is not exist, script will broke and warn.
 
-----> Generates the .env file from the enviroment variables contained in the env_sample file. If it is not desired to keep the default values, it is recommended to change these values before the script runs.
+**---->** Generates the .env file from the enviroment variables contained in the env_sample file. If it is not desired to keep the default values, it is recommended to change these values before the script runs.
 
-----> Stops, builds and starts the enviroment.
+**---->** Stops, builds and starts the enviroment.
 
-!!! IMPORTANT NOTE; If the installation script is run again after installation, newly added data and tables will be deleted. Persistent data is not kept !!!
+**!!! IMPORTANT NOTE; If the installation script is run again after installation, newly added data and tables will be deleted. Persistent data is not kept !!!**
 
-HOW TO WORK?
+<h1>**HOW TO WORK?**</h1>
 
---> PyEditorial, PostgreSQL and Nginx run seperate containers. Because of that, network setting as bridge is given in docker compose file.
+**-->** PyEditorial, PostgreSQL and Nginx run seperate containers. Because of that, network setting as bridge is given in docker compose file.
 
---> PostgreSQL gets the required data and tables from the dumydata.sql file to get started.
+**-->** PostgreSQL gets the required data and tables from the dumydata.sql file to get started.
 
---> After the installation is completed, go to http://localhost or https://localhost to use project
+**-->** After the installation is completed, go to http://localhost or https://localhost to use project
