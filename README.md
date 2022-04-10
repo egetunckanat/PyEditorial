@@ -32,11 +32,11 @@
 
 **-->** For installation, run the command in below; 
 
-```_./install-configure.sh_```
+```./install-configure.sh```
 
 **-->** If the script is not working please run the command in below and try the first command again;
 
-```_chmod +x install-configure.sh_```
+```chmod +x install-configure.sh```
 
 **-->** install-configur.sh script performs operations in the following order;
 
