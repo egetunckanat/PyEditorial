@@ -1,21 +1,20 @@
 #!/bin/bash
+ 
+docker ps;
+dockerChecker= echo $?
 
-git origin add 
-
-serviceName1="docker"
-
-if systemctl --all --type service | grep -q "$serviceName1";then
-    echo "$serviceName1 exists."
+if $dockerChecker==0;then
+    echo "Docker exists and running"
 else
-    apt install docker -y
+   echo "Pelase check Docker is installed and running"
+   exit
+    
 fi
 
-serviceName2="docker-compose"
-
-if systemctl --all --type service | grep -q "$serviceName2";then
-    echo "$serviceName2 exists."
+if ![ -x "$(command -v docker-compose)" ]; then
+   apt install docker-compose -y
 else
-    apt install docker-compose -y
+   echo "docker-compose is installed"
 fi
 
 mv env_sample .env; 
