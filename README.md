@@ -58,6 +58,6 @@
 
 **-->** After the installation is completed, go to http://localhost or https://localhost to use project
 
-<h3> Dorking Diagram </h3>
+<h3> Working Diagram </h3>
 
 ![](https://github.com/egetunckanat/PyEditorial/blob/master/diagram.png)
