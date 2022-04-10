@@ -21,11 +21,7 @@ else
 fi
 
 cp env_sample .env > /dev/null;
-
 docker-compose down;
-
 docker-compose build;
-
 docker-compose up -d;
-
 echo "Installation and configuration finished."
