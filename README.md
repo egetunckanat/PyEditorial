@@ -46,7 +46,7 @@
 
 - Generates the .env file from the enviroment variables contained in the env_sample file. If it is not desired to keep the default values, it is recommended to change these values before the script runs.
 
-- Stops, builds and starts the enviroment.
+- Stops the existing enviroment, builds and starts the enviroment.
 
 **!!! IMPORTANT NOTE; If the installation script is run again after installation, newly added data and tables will be deleted. Persistent data is not kept !!!**
 
@@ -60,4 +60,4 @@
 
 <h3> Working Diagram </h3>
 
-![](https://github.com/egetunckanat/PyEditorial/blob/master/diagram.png)
+![](https://github.com/egetunckanat/PyEditorial/blob/master/working-diagram.png)
