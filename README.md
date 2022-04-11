@@ -38,7 +38,7 @@
 
 ```chmod +x install-configure.sh```
 
-- install-configur.sh script performs operations in the following order;
+- install-configure.sh script performs operations in the following order;
 
 - Checks docker's existance. If it is exist, script will continue, If it is not exist, script will broke and warn. 
 
